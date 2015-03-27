@@ -57,7 +57,7 @@ find_package(catkin REQUIRED COMPONENTS
    PauseCommandMessage.msg
    HighLevelStatePacketMessage.msg
    ArmJointTrajectoryPacketMessage.msg
-   TrajectoryPointMessage.msg
+   JointTrajectoryPointMessage.msg
  )
 
 ## Generate services in the 'srv' folder
