@@ -1,14 +1,15 @@
 <launch>
   <param name="use_sim_time" value="false"/>
   <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParameters.ini" />
-  <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v4_no_hands.urdf" />
-  <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V4_NO_HANDS" />
+  <arg name="joint_offset_file" default="$(find ihmc_atlas)/configurations/AtlasJointOffsets.ini" />
+  <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
+  <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
   <param name="/atlas/robot_description" textfile="$(arg description_model)" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
     <remap from="joint_states" to="/ihmc_ros/atlas/output/joint_states" />
     <remap from="robot_description" to="/atlas/robot_description" />
   </node>
   <node name="IHMCAtlasAPI" pkg="ihmc_sim" type="IHMCAtlasAPI" args="-m $(arg ihmc_model)" required="true" output="screen" cwd="node">
-	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file)" />
+	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file) -DjointOffsetFile=$(arg joint_offset_file)" />
   </node>
 </launch>
