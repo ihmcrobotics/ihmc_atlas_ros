@@ -1,15 +1,15 @@
 <launch>
-  <param name="use_sim_time" value="false"/>
-  <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParameters.ini" />
-  <arg name="joint_offset_file" default="$(find ihmc_atlas)/configurations/AtlasJointOffsets.ini" />
+  <param name="use_sim_time" value="true"/>
+  <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParametersSim.ini" />
   <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
+  <arg name="starting_location" default="DEFAULT" />
   <param name="/atlas/robot_description" textfile="$(arg description_model)" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
     <remap from="joint_states" to="/ihmc_ros/atlas/output/joint_states" />
     <remap from="robot_description" to="/atlas/robot_description" />
   </node>
-  <node name="IHMCAtlasAPI" pkg="ihmc_sim" type="IHMCAtlasAPI" args="-m $(arg ihmc_model)" required="true" output="screen" cwd="node">
-	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file) -DjointOffsetFile=$(arg joint_offset_file)" />
+  <node name="IHMCAtlasAPISimulator" pkg="ihmc_atlas" type="IHMCAtlasAPISimulator" args="-m $(arg ihmc_model) -s $(arg starting_location)" required="true" output="screen" cwd="node">
+	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file)" />
   </node>
 </launch>

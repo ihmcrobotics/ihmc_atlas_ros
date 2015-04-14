@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>ihmc_atlas</name>
-  <version>0.3.0</version>
+  <version>0.3.2</version>
   <description>The ihmc_atlas package allows for using the IHMC ROS API with the Boston Dynamics Atlas robot</description>
 
   <maintainer email="bshrewsbury@ihmc.us">The People's Glorious Point of Contact</maintainer>
@@ -12,8 +12,10 @@
 
   <author email="bshrewsbury@ihmc.us">The People's Glorious Author</author>
 
-  <run_depend>ihmc_msgs</run_depend>
-  <run_depend>ihmc_sim</run_depend>
   <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>ihmc_msgs</run_depend>
+  <run_depend>ihmc_models</run_depend>
+  <run_depend>ihmc_gazebo</run_depend>
 
 </package>
