@@ -4,7 +4,7 @@
   <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
   <arg name="starting_location" default="DEFAULT" />
-  <arg name="tf_prefix" default="" />
+  <arg name="tf_prefix" default="NONE" />
   <param name="/atlas/robot_description" textfile="$(arg description_model)" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
     <remap from="joint_states" to="/ihmc_ros/atlas/output/joint_states" />
