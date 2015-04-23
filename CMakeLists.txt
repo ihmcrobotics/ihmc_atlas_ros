@@ -64,6 +64,7 @@ find_package(catkin REQUIRED COMPONENTS
    AtlasWristSensorCalibrationRequestPacketMessage.msg
    RawImuData.msg
    BatchRawImuData.msg   
+   Point2dMessage.msg
  )
 
 ## Generate services in the 'srv' folder
