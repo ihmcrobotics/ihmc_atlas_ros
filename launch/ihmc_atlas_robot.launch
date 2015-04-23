@@ -2,6 +2,7 @@
   <param name="use_sim_time" value="false"/>
   <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParametersRobot.ini" />
   <arg name="joint_offset_file" default="$(find ihmc_atlas)/configurations/AtlasJointOffsets.ini" />
+  <arg name="hydraulic_arm_gains" default="$(find ihmc_atlas)/configurations/AtlasHydraulicArmGains.ini" />
   <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
   <arg name="tf_prefix" default="" />
@@ -11,6 +12,7 @@
     <remap from="robot_description" to="/atlas/robot_description" />
   </node>
   <node name="IHMCAtlasAPI" pkg="ihmc_atlas" type="IHMCAtlasAPI" args="-m $(arg ihmc_model) --tfPrefix $(arg tf_prefix)" required="true" output="screen" cwd="node">
-	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file) -DjointOffsetFile=$(arg joint_offset_file)" />
+	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file) -DjointOffsetFile=$(arg joint_offset_file) 
+  -DhydraulicArmGains=$(arg hydraulic_arm_gains)" />
   </node>
 </launch>
