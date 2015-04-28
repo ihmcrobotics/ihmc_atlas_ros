@@ -10,18 +10,22 @@ To download the latest IHMC Controller-plus-Sim binaries, run `rosrun ihmc_atlas
 
 `ihmc_atlas` provides the following launch files:
 
-- `ihmc_atlas_scs.launch`: Launch the ROS API node and the IHMC Simulation Construction Set simulated robot
-- `ihmc_atlas_robot.launch`: Launch the ROS API node to work with the real robot 
+- `ihmc_atlas_scs.launch`: Launch the ROS API node and the IHMC Simulation Construction Set simulated robot.
+- `ihmc_atlas_robot.launch`: Launch the ROS API node to work with the real robot.
+- `ihmc_atlas_remote_visualizer.launch`: Launch the SCS Remote Visualizer for performing analysis and diagnostics on the real robot.
 
 You can set the following roslaunch args:
 
 - `ihmc_network_file:=<absolute path to network file>`: Specific the network configuration .ini file for the IHMC software. See [the wiki](https://bitbucket.org/ihmcrobotics/ihmc_ros/wiki/network-config) for more information
 
-In addition, the Robot and SCS launches can take the following arguments:
+In addition, the Visualizer, Robot and SCS launches can take the following argument:
 
 - `ihmc_model:=<MODEL_NAME>`: Specify an argument for the IHMC Controller letting it know which model to use internally. If you would like to see additional models, please feel free to submit a [feature request](https://bitbucket.org/ihmcrobotics/ihmc_ros/issues/new). Currently valid model arguments:
   - ATLAS\_UNPLUGGED\_V5\_NO\_HANDS
   - ATLAS\_UNPLUGGED\_V5\_DUAL\_ROBOTIQ
+
+Further, Robot and SCS launches can take the following argument:
+
 - `description_model:=<path to urdf file>`: The .urdf used by ROS when publishing robot descriptions. Defaults to one of the models vendored in the `ihmc_models` package, but can be overriden.
 
 Lastly, the SCS launch can take an argument for starting position:
