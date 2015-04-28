@@ -17,4 +17,9 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
+install(DIRECTORY urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  FILES_MATCHING PATTERN "*.urdf" 
+)
+
 
