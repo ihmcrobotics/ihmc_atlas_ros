@@ -11,7 +11,6 @@ To download the latest IHMC Controller-plus-Sim binaries, run `rosrun ihmc_atlas
 `ihmc_atlas` provides the following launch files:
 
 - `ihmc_atlas_scs.launch`: Launch the ROS API node and the IHMC Simulation Construction Set simulated robot
-- `ihmc_atlas_gazebo.launch`: Launch the ROS API node and the IHMC Gazebo plugin
 - `ihmc_atlas_robot.launch`: Launch the ROS API node to work with the real robot 
 
 You can set the following roslaunch args:
