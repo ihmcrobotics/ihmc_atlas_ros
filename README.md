@@ -28,9 +28,14 @@ Further, Robot and SCS launches can take the following argument:
 
 - `description_model:=<path to urdf file>`: The .urdf used by ROS when publishing robot descriptions. Defaults to one of the models vendored in the `ihmc_models` package, but can be overriden.
 
-Lastly, the SCS launch can take an argument for starting position:
+Lastly, the SCS launch can take an argument for starting position, as well as other args specific to SCS:
 
 - `starting_location:=<STARTING POSITION>`: Specify landmarks in the test environment to spawn the robot near.
+- `scs_args:=<Space separated list of flags>`: This is a string of POSIX-like command line arguments.
+
+### SCS Arguments
+
+- **`-d`**, **`--disable-visualize`**: Run SCS without graphics.
 
 ### Starting Positions
 The starting position in the demo world can be defined. Currently the options are:
