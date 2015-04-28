@@ -1,0 +1,8 @@
+<launch>
+  <param name="use_sim_time" value="false"/>
+  <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParametersRobot.ini" />
+  <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
+  <node name="IHMCRemoteAtlasVisualizer" pkg="ihmc_atlas" type="IHMCRemoteAtlasVisualizer" args="-m $(arg ihmc_model) --realRobot" required="true" output="screen" cwd="node">
+	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file)" />
+  </node>
+</launch>
