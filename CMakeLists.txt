@@ -65,6 +65,7 @@ find_package(catkin REQUIRED COMPONENTS
    RawImuData.msg
    BatchRawImuData.msg   
    Point2dMessage.msg
+   HighLevelStateChangePacketMessage.msg
  )
 
 ## Generate services in the 'srv' folder
