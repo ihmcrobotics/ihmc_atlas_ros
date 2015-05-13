@@ -43,4 +43,7 @@ bool keep_left_hand_in_taskspace_position
 # keepRightHandInTaskspacePosition specifies whether the position controller should try to maintain the right hand position in task space
 bool keep_right_hand_in_taskspace_position
 
+# if flattenFeetAtTheEnd is true, the ankles will move at the end of the trajectory to adapt to the inclination of the ground
+bool flatten_feet_at_the_end
+
 
