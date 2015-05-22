@@ -65,7 +65,12 @@ find_package(catkin REQUIRED COMPONENTS
    RawImuData.msg
    BatchRawImuData.msg   
    Point2dMessage.msg
-   HighLevelStateChangePacketMessage.msg
+   HighLevelStatePacketMessage.msg
+   SupportPolygonMessage.msg
+   HandComplianceControlParametersPacketMessage.msg
+   LegCompliancePacketMessage.msg
+   SingleJointAnglePacketMessage.msg
+   MultiJointAnglePacketMessage.msg
  )
 
 ## Generate services in the 'srv' folder
