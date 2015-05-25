@@ -4,6 +4,7 @@
   <arg name="joint_offset_file" default="$(find ihmc_atlas)/configurations/AtlasJointOffsets.ini" />
   <arg name="hydraulic_arm_gains" default="$(find ihmc_atlas)/configurations/AtlasHydraulicArmGains.ini" />
   <arg name="back_and_leg_gains" default="$(find ihmc_atlas)/configurations/AtlasBackAndLegGains.ini" />
+  <arg name="standprep_set_points" default="$(find ihmc_atlas)/configurations/AtlasStandPrepSetPoints.ini" />
   <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
   <arg name="tf_prefix" default="NONE" />
@@ -14,6 +15,6 @@
   </node>
   <node name="IHMCAtlasAPI" pkg="ihmc_atlas" type="IHMCAtlasAPI" args="-m $(arg ihmc_model) --tfPrefix $(arg tf_prefix)" required="true" output="screen" cwd="node">
 	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file) -DjointOffsetFile=$(arg joint_offset_file) 
-  -DhydraulicArmGains=$(arg hydraulic_arm_gains) -DbackAndLegGains=$(arg back_and_leg_gains)" />
+  -DhydraulicArmGains=$(arg hydraulic_arm_gains) -DbackAndLegGains=$(arg back_and_leg_gains) -DstandPrepSetPointsFile=$(arg standprep_set_points)" />
   </node>
 </launch>
