@@ -60,7 +60,7 @@
   </link>
   <link name="l_hand">
     <inertial>
-      <mass value="0.5839"/>
+      <mass value="1.7839"/>
       <origin rpy="0 0 0" xyz="0.00016 0.08159 0.00002"/>
       <inertia ixx="0.000388" ixy="0" ixz="0" iyy="0.000477" iyz="0" izz="0.000379"/>
     </inertial>
@@ -115,7 +115,7 @@
   </link>
   <link name="l_lfarm">
     <inertial>
-      <mass value="0.648"/>
+      <mass value="1.6"/>
       <origin rpy="0 0 0" xyz="0.00017 0.02515 0.00163"/>
       <inertia ixx="0.000764" ixy="0" ixz="0" iyy="0.000429" iyz="0" izz="0.000825"/>
     </inertial>
@@ -514,7 +514,7 @@
   </link>
   <link name="r_hand">
     <inertial>
-      <mass value="0.5839"/>
+      <mass value="1.7839"/>
       <origin rpy="0 0 0" xyz="0.00016 -0.08159 0.00002"/>
       <inertia ixx="0.000388" ixy="0" ixz="0" iyy="0.000477" iyz="0" izz="0.000379"/>
     </inertial>
@@ -569,7 +569,7 @@
   </link>
   <link name="r_lfarm">
     <inertial>
-      <mass value="0.648"/>
+      <mass value="1.6"/>
       <origin rpy="0 0 0" xyz="0.00017 -0.02515 0.00163"/>
       <inertia ixx="0.000764" ixy="0" ixz="0" iyy="0.000429" iyz="0" izz="0.000825"/>
     </inertial>
@@ -843,7 +843,7 @@
   <link name="utorso">
     <inertial>
       <mass value="84.409"/>
-      <origin rpy="0 0 0" xyz="-0.0622 0.0023 0.3157"/>
+      <origin rpy="0 0 0" xyz="-0.035 0.0023 0.3157"/>
       <inertia ixx="1.577" ixy="-0.032" ixz="0.102" iyy="1.602" iyz="0.047" izz="0.565"/>
     </inertial>
     <visual>
@@ -1282,7 +1282,7 @@
     <pose>0 0 0.93 0 0 0</pose>
   </gazebo>
   <gazebo>
-    <plugin filename="libAtlasV4Plugin.so" name="atlas_plugin"/>
+    <plugin name="ihmc_gazebo" filename="libDRCSimIHMCPlugin.so"/>
     <plugin filename="libgazebo_ros_joint_pose_trajectory.so" name="joint_trajectory_plugin">
       <topicName>joint_trajectory</topicName>
       <updateRate>1000.0</updateRate>
@@ -1310,7 +1310,7 @@
   <joint name="imu_joint" type="fixed">
     <parent link="pelvis"/>
     <child link="imu_link"/>
-    <origin rpy="0 0 0" xyz="0.05991527603 0 -0.01415"/>
+    <origin rpy="0 3.14159265359 -0.78539816339" xyz="-0.0905 -0.000004 -0.0125"/>
   </joint>
   <gazebo reference="imu_link">
     <!-- this is expected to be reparented to pelvis with appropriate offset
@@ -1341,15 +1341,15 @@
                data. -->
           <rate>
             <mean>0.0</mean>
-            <stddev>2e-4</stddev>
-            <bias_mean>0.0000075</bias_mean>
-            <bias_stddev>0.0000008</bias_stddev>
+            <stddev>2e-8</stddev>
+            <bias_mean>0.00000075</bias_mean>
+            <bias_stddev>0.00000008</bias_stddev>
           </rate>
           <accel>
             <mean>0.0</mean>
-            <stddev>1.7e-2</stddev>
-            <bias_mean>0.1</bias_mean>
-            <bias_stddev>0.001</bias_stddev>
+            <stddev>1.7e-8</stddev>
+            <bias_mean>0.01</bias_mean>
+            <bias_stddev>0.0001</bias_stddev>
           </accel>
         </noise>
       </imu>
