@@ -1310,7 +1310,7 @@
   <joint name="imu_joint" type="fixed">
     <parent link="pelvis"/>
     <child link="imu_link"/>
-    <origin rpy="0 3.14159265359 -0.78539816339" xyz="-0.0905 -0.000004 -0.0125"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   <gazebo reference="imu_link">
     <!-- this is expected to be reparented to pelvis with appropriate offset
