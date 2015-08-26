@@ -42,9 +42,11 @@ geometry_msgs/Quaternion[] chest_world_orientation
 geometry_msgs/Vector3[] chest_angular_velocity
 
 # Arm trajectory for the right arm. Should have numWaypoints waypoints.
+# Time in trajectory_points should match the corresponding element of timeAtWaypoint
 ArmJointTrajectoryPacketMessage right_arm_trajectory
 
 # Arm trajectory for the left arm. Should have numWaypoints waypoints.
+# Time in trajectory_points should match the corresponding element of timeAtWaypoint
 ArmJointTrajectoryPacketMessage left_arm_trajectory
 
 # Number of waypoints in the trajectory. Should be at least 1
@@ -52,5 +54,7 @@ int32 num_waypoints
 
 # Number of joints in a single arm
 int32 num_joints_per_arm
+
+int64 unique_id
 
 
