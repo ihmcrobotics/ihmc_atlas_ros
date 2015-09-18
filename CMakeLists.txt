@@ -71,6 +71,7 @@ find_package(catkin REQUIRED COMPONENTS
    LegCompliancePacketMessage.msg
    SingleJointAnglePacketMessage.msg
    MultiJointAnglePacketMessage.msg
+   FingerStatePacketMessage.msg
  )
 
 ## Generate services in the 'srv' folder
