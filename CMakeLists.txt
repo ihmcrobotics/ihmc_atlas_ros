@@ -63,7 +63,7 @@ find_package(catkin REQUIRED COMPONENTS
    AtlasElectricMotorEnablePacketMessage.msg
    AtlasWristSensorCalibrationRequestPacketMessage.msg
    RawImuData.msg
-   BatchRawImuData.msg   
+   BatchRawImuData.msg
    Point2dMessage.msg
    HighLevelStatePacketMessage.msg
    SupportPolygonMessage.msg
@@ -72,6 +72,9 @@ find_package(catkin REQUIRED COMPONENTS
    SingleJointAnglePacketMessage.msg
    MultiJointAnglePacketMessage.msg
    FingerStatePacketMessage.msg
+   WholeBodyTrajectoryPacketMessage.msg
+   StopMotionPacketMessage.msg
+   LastReceivedMessage.msg
  )
 
 ## Generate services in the 'srv' folder
