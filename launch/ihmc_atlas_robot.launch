@@ -5,7 +5,7 @@
   <arg name="hydraulic_arm_gains" default="$(find ihmc_atlas)/configurations/AtlasHydraulicArmGains.ini" />
   <arg name="back_and_leg_gains" default="$(find ihmc_atlas)/configurations/AtlasBackAndLegGains.ini" />
   <arg name="standprep_set_points" default="$(find ihmc_atlas)/configurations/AtlasStandPrepSetPoints.ini" />
-  <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
+  <arg name="description_model" default="$(find ihmc_atlas)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
   <arg name="tf_prefix" default="NONE" />
   <param name="/atlas/robot_description" textfile="$(arg description_model)" />

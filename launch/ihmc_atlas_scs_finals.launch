@@ -1,7 +1,7 @@
 <launch>
   <param name="use_sim_time" value="true"/>
   <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParametersSim.ini" />
-  <arg name="description_model" default="$(find ihmc_models)/urdf/atlas_unplugged_v5_no_hands.urdf" />
+  <arg name="description_model" default="$(find ihmc_atlas)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
   <arg name="starting_location" default="DEFAULT" />
   <arg name="tf_prefix" default="NONE" />
