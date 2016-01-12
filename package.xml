@@ -15,7 +15,5 @@
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>rospy</run_depend>
   <run_depend>ihmc_msgs</run_depend>
-  <run_depend>ihmc_models</run_depend>
-  <run_depend>ihmc_gazebo</run_depend>
 
 </package>
