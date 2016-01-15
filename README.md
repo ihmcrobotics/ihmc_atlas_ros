@@ -27,7 +27,7 @@ In addition, the Visualizer, Robot and SCS launches can take the following argum
 
 Further, Robot and SCS launches can take the following argument:
 
-- `description_model:=<path to urdf file>`: The .urdf used by ROS when publishing robot descriptions. Defaults to one of the models vendored in the `ihmc_models` package, but can be overriden.
+- `description_model:=<path to urdf file>`: The .urdf used by ROS when publishing robot descriptions. Defaults to one of the models vendored in the `ihmc_atlas` package, but can be overriden.
 
 Lastly, the SCS launch can take an argument for starting position:
 
