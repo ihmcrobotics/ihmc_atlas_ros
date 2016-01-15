@@ -6,11 +6,12 @@
   <arg name="starting_location" default="DEFAULT" />
   <arg name="tf_prefix" default="NONE" />
   <arg name="scs_args" default="" />
-  <param name="/atlas/robot_description" textfile="$(arg description_model)" />
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" >
-    <remap from="joint_states" to="/ihmc_ros/atlas/output/joint_states" />
-    <remap from="robot_description" to="/atlas/robot_description" />
-  </node>
+
+  <include file="$(find ihmc_ros_common)/launch/robot_description_common.launch">
+    <arg name="robot_name" value="atlas" />
+    <arg name="model_file" value="$(arg description_model)" />
+  </include>
+
   <node name="IHMCAtlasAPISimulatorDemo01" pkg="ihmc_atlas" type="IHMCAtlasAPISimulatorDemo01" args="-m $(arg ihmc_model) -s $(arg starting_location) --tfPrefix $(arg tf_prefix) $(arg scs_args)" required="true" output="screen" cwd="node">
 	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file)" />
   </node>
