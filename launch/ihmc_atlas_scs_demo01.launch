@@ -14,7 +14,9 @@
 
   <include file="$(find ihmc_atlas)/launch/common/ihmc_atlas_params_common.launch" />
 
-  <node name="IHMCAtlasAPISimulatorDemo01" pkg="ihmc_atlas" type="IHMCAtlasAPISimulatorDemo01" args="-m $(arg ihmc_model) -s $(arg starting_location) --tfPrefix $(arg tf_prefix) $(arg scs_args)" required="true" output="screen" cwd="node">
-	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file)" />
+  <node name="IHMCAtlasAPISimulatorDemo01" pkg="ihmc_ros_java_adapter" type="gradlew" args="runJava --stacktrace -Pyaml=$(find ihmc_atlas)/configurations/demo01.yaml -PprogramArgs=-m,$(arg ihmc_model),-s,$(arg starting_location),--tfPrefix,$(arg tf_prefix),$(arg scs_args)" required="true" output="screen" cwd="node">
+	   <env name="IHMC_ROBOT_CONTROLLER_IP" value="localhost" />
+     <env name="IHMC_NETWORK_MANAGER_IP" value="localhost" />
+     <env name="IHMC_ROS_URI" value="http://localhost:11311" />
   </node>
 </launch>

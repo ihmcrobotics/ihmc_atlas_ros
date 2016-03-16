@@ -1,0 +1,7 @@
+!ihmc_ros_java_adapter
+programArgs: []
+vmConfig:
+  heapSize: 4g
+  mainMethod: us.ihmc.atlas.AtlasDemo01ROSAPISimulator
+dependencies:
+- us.ihmc:Atlas:0.7.4
