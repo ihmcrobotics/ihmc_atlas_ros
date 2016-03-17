@@ -2,28 +2,28 @@ cmake_minimum_required(VERSION 2.8.3)
 project(ihmc_atlas)
 
 find_package(catkin REQUIRED COMPONENTS
-  std_msgs
-  message_generation
-  geometry_msgs
-  ihmc_msgs
+#  std_msgs
+#  message_generation
+#  geometry_msgs
+#  ihmc_msgs
   ihmc_ros_common
 )
 
-add_message_files(
-   FILES
-   AtlasDesiredPumpPSIPacketMessage.msg
-   AtlasElectricMotorEnablePacketMessage.msg
-   AtlasWristSensorCalibrationRequestPacketMessage.msg
-   RawImuData.msg
-   BatchRawImuData.msg
- )
+#add_message_files(
+#   FILES
+#   AtlasDesiredPumpPSIPacketMessage.msg
+#   AtlasElectricMotorEnablePacketMessage.msg
+#   AtlasWristSensorCalibrationRequestPacketMessage.msg
+#   RawImuData.msg
+#   BatchRawImuData.msg
+#)
 
- generate_messages(
-   DEPENDENCIES
-   std_msgs
-   geometry_msgs
-   ihmc_msgs
- )
+#generate_messages(
+#   DEPENDENCIES
+#   std_msgs
+#   geometry_msgs
+#   ihmc_msgs
+# )
 
 catkin_package(
 #  INCLUDE_DIRS include
