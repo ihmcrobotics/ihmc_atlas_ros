@@ -14,7 +14,6 @@
 
   <include file="$(find ihmc_atlas)/launch/common/ihmc_atlas_params_common.launch" />
 
-  <node name="IHMCAtlasAPISimulatorFinals" pkg="ihmc_atlas" type="IHMCAtlasAPISimulatorFinals" args="-m $(arg ihmc_model) -s $(arg starting_location) --tfPrefix $(arg tf_prefix) $(arg scs_args)" required="true" output="screen" cwd="node">
-	<env name="IHMC_ATLAS_API_OPTS" value="-DnetworkParameterFile=$(arg ihmc_network_file)" />
+  <node name="IHMCAtlasAPISimulatorFinals" pkg="ihmc_ros_java_adapter" type="gradlew" args="runJava -Dus.ihmc.networkParameterFile=$(arg ihmc_network_file) -Pyaml=$(find ihmc_atlas)/configurations/drc_finals.yaml -PprogramArgs=-m,$(arg ihmc_model),-s,$(arg starting_location),--tfPrefix,$(arg tf_prefix),$(arg scs_args)" required="true" output="screen" cwd="node">
   </node>
 </launch>
