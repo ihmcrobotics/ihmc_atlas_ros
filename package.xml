@@ -17,5 +17,6 @@
 
   <run_depend>rospy</run_depend>
   <run_depend>ihmc_ros_common</run_depend>
+  <run_depend>ihmc_msgs</run_depend>
 
 </package>

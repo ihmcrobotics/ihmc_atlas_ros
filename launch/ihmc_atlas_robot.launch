@@ -1,5 +1,6 @@
 <launch>
   <param name="use_sim_time" value="false"/>
+  <arg name="use_local_build" default="false" />
   <arg name="ihmc_network_file" default="$(find ihmc_atlas)/configurations/IHMCNetworkParametersRobot.ini" />
   <arg name="description_model" default="$(find ihmc_atlas)/urdf/atlas_unplugged_v5_no_hands.urdf" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
@@ -12,6 +13,6 @@
 
   <include file="$(find ihmc_atlas)/launch/common/ihmc_atlas_params_common.launch" />
 
-  <node name="IHMCAtlasAPI" pkg="ihmc_ros_java_adapter" type="gradlew" args="runJava -Dus.ihmc.networkParameterFile=$(arg ihmc_network_file) -Pyaml=$(find ihmc_atlas)/configurations/robot.yaml -PprogramArgs=-m,$(arg ihmc_model),--tfPrefix,$(arg tf_prefix)" required="true" output="screen" cwd="node">
+  <node name="IHMCAtlasAPI" pkg="ihmc_ros_java_adapter" type="gradlew" args="runJava -Dus.ihmc.networkParameterFile=$(arg ihmc_network_file) -PuseLocal=$(arg use_local_build) -Pyaml=$(find ihmc_atlas)/configurations/robot.yaml -PprogramArgs=-m,$(arg ihmc_model),--tfPrefix,$(arg tf_prefix)" required="true" output="screen" cwd="node">
   </node>
 </launch>

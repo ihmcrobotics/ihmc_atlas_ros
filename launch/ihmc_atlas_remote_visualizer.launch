@@ -1,6 +1,7 @@
 <launch>
   <param name="use_sim_time" value="false"/>
+  <arg name="use_local_build" default="false" />
   <arg name="ihmc_model" default="ATLAS_UNPLUGGED_V5_NO_HANDS" />
-  <node name="IHMCRemoteAtlasVisualizer" pkg="ihmc_ros_java_adapter" type="gradlew" args="runJava -Pyaml=$(find ihmc_atlas)/configurations/remote_visualizer.yaml -PprogramArgs=-m,$(arg ihmc_model),--realRobot" required="true" output="screen" cwd="node">
+  <node name="IHMCRemoteAtlasVisualizer" pkg="ihmc_ros_java_adapter" type="gradlew" args="runJava -PuseLocal=$(arg use_local_build) -Pyaml=$(find ihmc_atlas)/configurations/remote_visualizer.yaml -PprogramArgs=-m,$(arg ihmc_model),--realRobot" required="true" output="screen" cwd="node">
   </node>
 </launch>
