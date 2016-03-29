@@ -1,6 +1,6 @@
 #ihmc\_atlas
 
-The `ihmc_atlas` package allows for integrating the IHMC ROS API and the Boston Dynamics Atlas humanoid in simulation and on real robot hardware.
+The `ihmc_atlas_ros` package allows for integrating the IHMC ROS API and the Boston Dynamics Atlas humanoid in simulation and on real robot hardware.
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ This software can also be used with a local build of IHMC Open Robotics Software
 
 ##Usage
 
-`ihmc_atlas` provides the following launch files:
+`ihmc_atlas_ros` provides the following launch files:
 
 - `ihmc_atlas_scs_demo01.launch`: Launch the ROS API node and the IHMC Simulation Construction Set simulated robot in a custom demo environment.
 - `ihmc_atlas_scs_finals.launch`: Launch the ROS API node and the IHMC Simulation Construction Set simulated robot in an environment inspired by the DRC Finals.
@@ -31,7 +31,7 @@ In addition, the Visualizer, Robot and SCS launches can take the following argum
 
 Further, Robot and SCS launches can take the following argument:
 
-- `description_model:=<path to urdf file>`: The .urdf used by ROS when publishing robot descriptions. Defaults to one of the models vendored in the `ihmc_atlas` package, but can be overriden.
+- `description_model:=<path to urdf file>`: The .urdf used by ROS when publishing robot descriptions. Defaults to one of the models vendored in the `ihmc_atlas_ros` package, but can be overriden.
 
 Lastly, the SCS launch can take an argument for starting position:
 
