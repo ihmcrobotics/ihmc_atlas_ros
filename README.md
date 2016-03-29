@@ -1,4 +1,4 @@
-#ihmc\_atlas
+#ihmc\_atlas\_ros
 
 The `ihmc_atlas_ros` package allows for integrating the IHMC ROS API and the Boston Dynamics Atlas humanoid in simulation and on real robot hardware.
 
