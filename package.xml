@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>ihmc_atlas_ros</name>
-  <version>0.7.10</version>
+  <version>0.8.0</version>
   <description>The ihmc_atlas_ros package allows for using the IHMC ROS API with the Boston Dynamics Atlas robot</description>
 
   <maintainer email="dstephen@ihmc.us">Doug Stephen</maintainer>
