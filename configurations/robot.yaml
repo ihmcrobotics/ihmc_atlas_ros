@@ -4,4 +4,4 @@ vmConfig:
   heapSize: 4g
   mainMethod: us.ihmc.atlas.RemoteAtlasVisualizer
 dependencies:
-- us.ihmc:Atlas:0.8.1
+- us.ihmc:Atlas:0.8.2
