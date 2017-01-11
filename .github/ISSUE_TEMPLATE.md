@@ -1,8 +1,8 @@
-| Required Info ||
+| Required Info | |
 |---|---|
-|Version or commit hash||
-|Operating System||
-|ROS Version||
+|Version or commit hash| |
+|Operating System| |
+|ROS Version| |
 
 ####Steps to reproduce issue
 <!-- Detailed instructions on how to reliably reproduce this issue -->
